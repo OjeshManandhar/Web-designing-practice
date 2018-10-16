@@ -1,27 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One|Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One|Cinzel|Ubuntu+Mono');
 
 body {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
 	font-family: 'Chau Philomene One';
 	font-weight: 500;
-	letter-spacing: 1.5px;
-	margin: 0px auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color: #6ec1e4;
-	line-height: 2em;
+	letter-spacing: 2px;
+	font-weight: 500;
+	margin: 50px auto;
 }
 
 p {
 	color: #7a7a7a;
+	letter-spacing: 1.5px;
+	margin: auto;
 	line-height: 2em;
 }
 
 header {
 	position: absolute;
-	text-align: center;
 	width: 100%;
 	z-index: 10;
+	text-align: center;
 	background-color: rgba(0, 0, 0, 0.500);
 }
 
@@ -29,8 +34,6 @@ header {
 	display: inline-block;
 	width: 45%;
 	height: 75px;
-
-	/*border: 1px solid blue;*/
 }
 
 #logo {
@@ -62,10 +65,6 @@ nav a:hover {
 	color: #293df2;
 }
 
-nav a:active {
-	color: #6371f2;
-}
-
 #content {
 	width: 100%;
 	text-align: center;
@@ -94,7 +93,7 @@ nav a:active {
 
 #about-us h1 {
 	font-style: oblique;
-	font-size: 41px;
+	font-size: 50px;
 	text-transform: capitalize;
 	margin: 0px;
 	padding: 0px;
@@ -122,9 +121,9 @@ nav a:active {
 }
 
 #image-link {
-	width = 100%;
+	width: 100%;
 	text-align: center;
-	margin: 50px 0px;
+	margin: 50px 0px 50px 0px;
 }
 
 .page-link {
@@ -134,8 +133,6 @@ nav a:active {
 	padding: 0px;
 	min-width: 250px;
 	background-color: #595858;
-
-	border: 1px solid blue;
 }
 
 .page-link img {
@@ -154,31 +151,136 @@ nav a:active {
 }
 
 #connect-with-us {
+	position: relative;
 	background: url('images/26198401_1764249533607742_4570417670538870713_o.jpg') top center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	vertical-align: middle;
 	height: 100vh;
 	width: 100%;
+	margin: 3px 0px;
 }
 
-#connect-with-us h2 {
-	vertical-align: middle;
+#inner-box-connect-with-us {
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	right: 0%;
+	left: 0%;
+	width: 100%;
+	margin: auto 0px;
+}
+
+#connect-with-us h1 {
+	font-size: 75px;
+	text-transform: capitalize;
+	font-style: oblique;
+	line-height: 1.4em;
+	mix-blend-mode: color-dodge;
+	margin: 30px auto;
 }
 
 .member-link {
 	display: inline-block;
 	text-align: center;
-	margin: 10px;
+	margin: 30px 10px;
 	padding: 0px;
-	min-width: 250px;
-	vertical-align: middle;
-
-	border: 1px solid blue;
+	width: 250px;
 }
 
 .member-link img {
 	width: 250px;
 	height: 250px;
 	border-radius: 100%;
+}
+
+.member-link .members-profile-icons {
+	width: 100%;
+	text-align: center;
+}
+
+.member-link .members-profile-icons img{
+	height: 70px;
+	width: 70px;
+	padding: 5px;
+}
+
+#connect-with-us button {
+	display: block;
+	color: white;
+	background-color: #b5b1db;
+	font-family: 'Chau Philomene One';
+	font-size: 34px;
+	font-weight: 500;
+	text-transform: capitalize;
+	font-style: oblique;
+	line-height: 1em;
+	padding: 10px 15px;
+	border-radius: 15px;
+	margin: 30px auto;
+}
+
+#map {
+	width: 100%;
+	margin: 40px 0px 20px 0px;
+	text-align: ceter;
+	vertical-align: middle;
+}
+
+#map iframe {
+	width: 1100px;
+	height: 340px;
+	padding: 5px;
+}
+
+footer {
+	font-family: 'Ubuntu Mono';
+	width: 100%;
+	background-color: #1b1b1b;
+}
+
+#footer-contact {
+	max-width: 100%;
+	text-align: center;
+	margin: 0px;
+	padding: 8px;
+	border-bottom: 1px solid #3b3b3b;
+}
+
+#footer-contact p {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	width: 70%;
+	color: white;
+	font-weight: thin;
+	font-size: 19px;
+	line-height: 21px;
+}
+
+#footer-contact a {
+	color: #707070;
+	text-decoration: none;
+}
+
+#club-social-link {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	width: 25%;
+}
+
+#club-social-link img {
+	height: 50px;
+	width: 50px;
+	padding: 5px;
+}
+
+#law-content {
+	color: white;
+	text-align: center;
+	font-size: 15px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 11px;
 }
