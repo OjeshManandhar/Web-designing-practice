@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One|Cinzel');
+
+body {
+	font-family: 'Chau Philomene One';
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	margin: 0px auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #6ec1e4;
+	line-height: 2em;
+}
+
+p {
+	color: #7a7a7a;
+	line-height: 2em;
+}
+
+header {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.500);
+}
+
+.header-item{
+	display: inline-block;
+	width: 45%;
+	height: 75px;
+
+	/*border: 1px solid blue;*/
+}
+
+#logo {
+	float: left;
+	height: 55px;
+	width: 55px;
+	padding: 10px;
+}
+
+#main-menu {
+	float: right;
+	text-align: center
+}
+
+#main-menu li {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 15px;
+	text-transform: capitalize;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+}
+
+nav a:hover {
+	color: #293df2;
+}
+
+nav a:active {
+	color: #6371f2;
+}
+
+#content {
+	width: 100%;
+	text-align: center;
+}
+
+#head-image {
+	background: url('images/fb_size_club_color_853_481.png') bottom center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	width: 100%;
+
+	/*
+	border-bottom-right-radius: 50% 11%;
+	border-bottom-left-radius: 50% 11%;
+	*/
+}
+
+#about-us {
+	display: inline-block;
+	width: 75%;
+	text-align: center;
+
+	margin: 30px auto;
+}
+
+#about-us h1 {
+	font-style: oblique;
+	font-size: 41px;
+	text-transform: capitalize;
+	margin: 0px;
+	padding: 0px;
+}
+
+#about-us p {
+	font-size: 20px;
+	margin: 0px;
+	padding: 0px 0px 18px 0px;
+}
+
+#divider {
+	background: url('images/26232520_1764249403607755_3374506475404491961_o.jpg') top center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	width: 100%;
+
+	/*
+	border-bottom-right-radius: 50% 11%;
+	border-bottom-left-radius: 50% 11%;
+	border-top-right-radius: 50% 11%;
+	border-top-left-radius: 50% 11%;
+	*/
+}
+
+#image-link {
+	width = 100%;
+	text-align: center;
+	margin: 50px 0px;
+}
+
+.page-link {
+	display: inline-block;
+	text-align: center;
+	margin: 10px;
+	padding: 0px;
+	min-width: 250px;
+	background-color: #595858;
+
+	border: 1px solid blue;
+}
+
+.page-link img {
+	width: 250px;
+	height: 200px;
+	margin: 0px 0px 5px 0px;
+}
+
+.page-link h2 {
+	font-family: Cinzle;
+	font-weight: bold;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	margin: 0px 0px 10px 0px;
+}
+
+#connect-with-us {
+	background: url('images/26198401_1764249533607742_4570417670538870713_o.jpg') top center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	vertical-align: middle;
+	height: 100vh;
+	width: 100%;
+}
+
+#connect-with-us h2 {
+	vertical-align: middle;
+}
+
+.member-link {
+	display: inline-block;
+	text-align: center;
+	margin: 10px;
+	padding: 0px;
+	min-width: 250px;
+	vertical-align: middle;
+
+	border: 1px solid blue;
+}
+
+.member-link img {
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+}
