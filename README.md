@@ -3,7 +3,7 @@ Practice works for learning web designing HTML, CSS, JS and other languages.
 
 ## Projects List
 1. [Club Site](Club%20Site)
-2. [Amazing Alasaka](Amazing%20Alasaka)
+2. [Amazing Alaska](Amazing%20Alaska)
 
 ## Cloning
 To clone this repository to your local machine.
