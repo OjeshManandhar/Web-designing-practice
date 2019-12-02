@@ -4,6 +4,7 @@ Practice works for learning web designing HTML, CSS, JS and other languages.
 ## Projects List
 1. [Club Site](Club%20Site)
 2. [Amazing Alaska](Amazing%20Alaska)
+3. [Color Game](Color%20Game)
 
 ## Cloning
 To clone this repository to your local machine.
