@@ -8,7 +8,7 @@ Practice works for learning web designing HTML, CSS, JS and other languages.
 ## Cloning
 To clone this repository to your local machine.
 ```cmd
-git clone https://github.com/OjeshManandhar/Web-designing-practice.git
+git clone https://github.com/OjeshManandhar/Web-development-practice.git
 ```
 
 ## License
