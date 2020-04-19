@@ -51,11 +51,14 @@ const server = http.createServer((req, res) => {
   console.log('fileType:', fileType);
 
   if (req.url === '/') {
-    fs.readFile(path.normalize(homeDirPath + 'index.html'), (err, data) => {
-      res.writeHead(200, { 'Content-Type': mime.html });
-      res.write(data);
-      res.end();
-    });
+    fs.readFile(
+      path.normalize(homeDirPath + fileFolder.html + 'index.html'),
+      (err, data) => {
+        res.writeHead(200, { 'Content-Type': mime.html });
+        res.write(data);
+        res.end();
+      }
+    );
   } else {
     fs.readFile(
       path.normalize(homeDirPath + fileFolder[fileType] + basename),
