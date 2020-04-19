@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  min-width: 320px !important;
+}
+
+.content {
+  flex-grow: 1;
+
+  min-height: 500px;
+}
+
+.footer {
+  padding: 8px 16px;
+}
