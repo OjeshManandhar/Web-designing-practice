@@ -18,6 +18,11 @@ body {
   overflow: auto;
 }
 
+header {
+  /* To cover the area used by fixed-top navbar */
+  margin-top: 56px;
+}
+
 .projects {
   flex-grow: 1;
 }
