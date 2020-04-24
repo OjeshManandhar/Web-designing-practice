@@ -46,6 +46,10 @@ function serveIndexHTML(basePath, res) {
   fs.readFile(
     path.normalize(basePath + fileFolder.html + 'index.html'),
     (err, data) => {
+      if (err) {
+        console.log('ERROR:', err);
+        return res.end();
+      }
       res.writeHead(200, { 'Content-Type': mime.html });
       res.write(data);
       res.end();
@@ -53,9 +57,21 @@ function serveIndexHTML(basePath, res) {
   );
 }
 
-const server = http.createServer((req, res) => {
-  console.log('url:', req.url);
+function serveFile(filePath, fileType, res) {
+  console.log('serveFile:', path.normalize(filePath));
 
+  fs.readFile(path.normalize(filePath), (err, data) => {
+    if (err) {
+      console.log('ERROR:', err);
+      return res.end();
+    }
+    res.writeHead(200, { 'Content-Type': mime[fileType] });
+    res.write(data);
+    res.end();
+  });
+}
+
+const server = http.createServer((req, res) => {
   const reqUrl = url.parse(req.url);
 
   const basename = path.basename(reqUrl.pathname);
@@ -77,21 +93,25 @@ const server = http.createServer((req, res) => {
     pathList.shift(); // Remove first '' element
     console.log('pathList:', pathList);
 
-    console.log(
-      'path:',
-      path.normalize(projectDirPath + projectFolder[pathList[1]])
-    );
-
     if (pathList.length === 2) {
       //index page requested
-      console.log(pathList[1], 'Home');
       serveIndexHTML(
         path.normalize(projectDirPath + projectFolder[pathList[1]]),
         res
       );
     } else {
-      console.log(pathList[1], 'Other');
-      res.end();
+      const pathToFile = [];
+      for (let i = 2; i < pathList.length; i++) {
+        pathToFile.push(decodeURIComponent(pathList[i]));
+      }
+
+      serveFile(
+        path.normalize(
+          projectDirPath + projectFolder[pathList[1]] + pathToFile.join('/')
+        ),
+        fileType,
+        res
+      );
     }
   } else {
     fs.readFile(
