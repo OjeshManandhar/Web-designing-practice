@@ -87,11 +87,8 @@ const server = http.createServer((req, res) => {
   if (req.url === '/') {
     serveIndexHTML(homeDirPath, res);
   } else if (reqUrl.pathname.indexOf('/project') === 0) {
-    console.log('Project');
-
     const pathList = reqUrl.pathname.split('/');
     pathList.shift(); // Remove first '' element
-    console.log('pathList:', pathList);
 
     if (pathList.length === 2) {
       //index page requested
@@ -100,14 +97,14 @@ const server = http.createServer((req, res) => {
         res
       );
     } else {
-      const pathToFile = [];
+      const filePath = [];
       for (let i = 2; i < pathList.length; i++) {
-        pathToFile.push(decodeURIComponent(pathList[i]));
+        filePath.push(decodeURIComponent(pathList[i]));
       }
 
       serveFile(
         path.normalize(
-          projectDirPath + projectFolder[pathList[1]] + pathToFile.join('/')
+          projectDirPath + projectFolder[pathList[1]] + filePath.join('/')
         ),
         fileType,
         res
