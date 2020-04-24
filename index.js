@@ -7,9 +7,9 @@ const homeDirPath = __dirname + '/home/';
 const projectDirPath = __dirname + '/projects/';
 
 const projectFolder = {
-  clubSite: 'Club Site',
-  colorGame: 'Color Game',
-  amazingAlaska: 'Amazing Alaska'
+  clubSite: 'Club Site/',
+  colorGame: 'Color Game/',
+  amazingAlaska: 'Amazing Alaska/'
 };
 
 const fileFolder = {
@@ -37,7 +37,25 @@ const mime = {
   webp: 'image/webp'
 };
 
+function serveIndexHTML(basePath, res) {
+  console.log(
+    'serveIndexHTML:',
+    path.normalize(basePath + fileFolder.html + 'index.html')
+  );
+
+  fs.readFile(
+    path.normalize(basePath + fileFolder.html + 'index.html'),
+    (err, data) => {
+      res.writeHead(200, { 'Content-Type': mime.html });
+      res.write(data);
+      res.end();
+    }
+  );
+}
+
 const server = http.createServer((req, res) => {
+  console.log('url:', req.url);
+
   const reqUrl = url.parse(req.url);
 
   const basename = path.basename(reqUrl.pathname);
@@ -51,14 +69,30 @@ const server = http.createServer((req, res) => {
   console.log('fileType:', fileType);
 
   if (req.url === '/') {
-    fs.readFile(
-      path.normalize(homeDirPath + fileFolder.html + 'index.html'),
-      (err, data) => {
-        res.writeHead(200, { 'Content-Type': mime.html });
-        res.write(data);
-        res.end();
-      }
+    serveIndexHTML(homeDirPath, res);
+  } else if (reqUrl.pathname.indexOf('/project') === 0) {
+    console.log('Project');
+
+    const pathList = reqUrl.pathname.split('/');
+    pathList.shift(); // Remove first '' element
+    console.log('pathList:', pathList);
+
+    console.log(
+      'path:',
+      path.normalize(projectDirPath + projectFolder[pathList[1]])
     );
+
+    if (pathList.length === 2) {
+      //index page requested
+      console.log(pathList[1], 'Home');
+      serveIndexHTML(
+        path.normalize(projectDirPath + projectFolder[pathList[1]]),
+        res
+      );
+    } else {
+      console.log(pathList[1], 'Other');
+      res.end();
+    }
   } else {
     fs.readFile(
       path.normalize(homeDirPath + fileFolder[fileType] + basename),
