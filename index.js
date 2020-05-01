@@ -111,14 +111,14 @@ const server = http.createServer((req, res) => {
       );
     }
   } else {
-    fs.readFile(
-      path.normalize(homeDirPath + fileFolder[fileType] + basename),
-      (err, data) => {
-        res.writeHead(200, { 'Content-Type': mime[fileType] });
-        res.write(data);
-        res.end();
-      }
-    );
+    const pathList = reqUrl.pathname.split('/');
+    pathList.shift(); // Remove first '' element
+
+    const filePath = pathList.map((e) => {
+      return decodeURIComponent(e);
+    });
+
+    serveFile(path.normalize(homeDirPath + filePath.join('/')), fileType, res);
   }
 
   console.log('-----------------------------------');
