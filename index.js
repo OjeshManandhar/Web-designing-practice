@@ -86,6 +86,12 @@ const server = http.createServer((req, res) => {
 
   if (req.url === '/') {
     serveIndexHTML(homeDirPath, res);
+  } else if (reqUrl.pathname === '/favicon.ico') {
+    serveFile(
+      path.normalize(homeDirPath + fileFolder[fileType] + basename),
+      fileType,
+      res
+    );
   } else if (reqUrl.pathname.indexOf('/project') === 0) {
     const pathList = reqUrl.pathname.split('/');
     pathList.shift(); // Remove first '' element
