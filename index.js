@@ -7,9 +7,9 @@ const homeDirPath = __dirname + '/home/';
 const projectDirPath = __dirname + '/projects/';
 
 const projectFolder = {
-  clubSite: 'Club Site/',
-  colorGame: 'Color Game/',
-  amazingAlaska: 'Amazing Alaska/'
+  clubSite: 'Club_Site/',
+  colorGame: 'Color_Game/',
+  amazingAlaska: 'Amazing_Alaska/'
 };
 
 const fileFolder = {
